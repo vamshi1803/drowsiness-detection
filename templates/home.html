@@ -1,0 +1,88 @@
+<!-- templates/home.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}">Register</a>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Safety Monitoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url("{{ url_for('static', filename='images/img.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .title {
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .button-box {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .button-box a {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 114, 255, 0.4);
+            text-align: center;
+        }
+
+        .button-box a:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        Driver Drowsiness Monitoring System
+    </div>
+    <div class="button-box">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</body>
+</html>
